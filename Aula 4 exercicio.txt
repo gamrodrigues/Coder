@@ -1,0 +1,85 @@
+Mão na massa
+# Exercício 1
+
+eh_multiplo_dez = lambda x: (x%10) == 0
+
+# Exercício 2
+
+n=int(input('Digite um número inteiro: '))
+def fatorial (n):
+    produto=1
+    for i in range(1,n+1):
+        produto*=i
+    if n==0:produto=1
+    return produto
+
+fatorial (n)
+
+# Exercício 4
+
+def primeiro_nome (nome_completo):
+    nome=nome_completo.split(' ')[0]
+    return nome
+
+texto=input('Informe o nome completo: ')
+
+primeiro_nome(texto)
+
+nomes=['João Carlos', 'Maria Eduarda', 'Ana Rute', 'Ana Clara']
+
+list(map(primeiro_nome, nomes))
+
+# Exercício 6
+def dia_semana (data_br):
+    from datetime import datetime as dt
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    data_py = dt.strptime(data_br, '%d/%m/%Y')
+    dia_sem = data_py.weekday()
+    return days[dia_sem]
+
+
+
+
+
+Programação orientada à objetos
+
+class Pessoa:
+    def __init__(self, idade, sexo, renda):
+        self.idade = idade
+        self.sexo = sexo
+        self.renda = renda
+
+eu=Pessoa(34, 'Masculino', 1000)
+eu.renda
+
+
+class Equacao_primeiro_grau:
+    def __init__(self, a, b):
+        self.inclinação = a
+        self.intercepto = b
+        self.x = -b/a
+    def raiz (self):
+        print(f'A raiz da equação ({self.inclinação})x+({self.intercepto}) é {self.x}.')
+x=Equacao_primeiro_grau(2,-5)
+x.raiz()
+
+
+class Equacao_primeiro_grau:
+    def __init__(self, a, b):
+        self.inclinação = a
+        self.intercepto = b
+        self.x = -b/a
+    def raiz (self):
+        return self.x
+x=Equacao_primeiro_grau(2,-5)
+x.raiz()
+
+
+Bibliotecas
+#utils.py
+def mostra_dobro(x):
+    dobro = x*2
+    print(f'o dobro de {x} é {dobro}.')
+
+from utils import mostra_dobro
+mostra_dobro (10)
